@@ -16,6 +16,32 @@ public class Ex13StudentTester2023b
         else
             System.out.println("Failed,  expected: 49   student's result: "+result1);
 
+        System.out.println("----------------------------------------");
+        System.out.println("***       Q1  - shortestRoad         ***");
+        System.out.println("----------------------------------------");
+        System.out.println("Road1:[10, 2, 5, 7, 8, 3, 1, 6]");
+        System.out.println("Road2:[7,3,3,12,10,2,10,7]");
+        int[] road3={10, 2, 5, 7, 8, 3, 1, 6};
+        int[] road4={5, 8, 3, 6, 1, 9, 4, 7};
+        int result2=Ex13.shortestRoad(road3, road4);
+        if (result2==33)
+            System.out.println("Passed, result is 33");
+        else
+            System.out.println("Failed,  expected: 33   student's result: "+result2);
+
+        System.out.println("----------------------------------------");
+        System.out.println("***       Q1  - shortestRoad         ***");
+        System.out.println("----------------------------------------");
+        System.out.println("Road1:[10]");
+        System.out.println("Road2:[7]");
+        int[] road5={10};
+        int[] road6={7};
+        int result3=Ex13.shortestRoad(road5, road6);
+        if (result3==7)
+            System.out.println("Passed, result is 7");
+        else
+            System.out.println("Failed,  expected: 7   student's result: "+result3);
+
 //        System.out.println("----------------------------------------");
 //        System.out.println("***     Q2  - missingValue           ***");
 //        System.out.println("----------------------------------------");
