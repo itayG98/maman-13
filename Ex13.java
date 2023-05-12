@@ -2,7 +2,7 @@ public class Ex13 {
 
     public static int shortestRoad (int [] road1, int [] road2) {
         // initialize the four options of travel summery
-        int sumRoad1 =0 , sumRoad2 = 0 ,res = 0;
+        int sumRoad1 =0 , sumRoad2 = 0 ,res;
         int n = road1.length;
 
         // Calculate roads straight travel summery
