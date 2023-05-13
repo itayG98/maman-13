@@ -42,19 +42,19 @@ public class Ex13StudentTester2023b
         else
             System.out.println("Failed,  expected: 7   student's result: "+result3);
 
-//        System.out.println("----------------------------------------");
-//        System.out.println("***     Q2  - missingValue           ***");
-//        System.out.println("----------------------------------------");
-//        {
-//            int []arr = {7,10,13,16,22,25};
-//            System.out.println("arr: [7,10,13,16,22,25]");
-//            int result2=Ex13.missingValue(arr);
-//            if (result2==19)
-//                System.out.println("Passed, result is 19");
-//            else
-//                System.out.println("Failed,  expected: 19  student's result: "+result2);
-//        }
-//
+        System.out.println("----------------------------------------");
+        System.out.println("***     Q2  - missingValue           ***");
+        System.out.println("----------------------------------------");
+        {
+            int []arr = {7,10,13,16,22,25};
+            System.out.println("arr: [7,10,13,16,22,25]");
+            int result4=Ex13.missingValue(arr);
+            if (result4==19)
+                System.out.println("Passed, result is 19");
+            else
+                System.out.println("Failed,  expected: 19  student's result: "+result4);
+        }
+
 //        System.out.println("----------------------------------------");
 //        System.out.println("***     Q3  - longestPalindrome      ***");
 //        System.out.println("----------------------------------------");

@@ -31,7 +31,23 @@ public class Ex13 {
     }
 
     public static int missingValue (int [] arr) {
-        return 0;
+        int distance = calcDistance(arr[0],arr[arr.length-1],arr.length);
+        int middle = 0;
+        for(int left = 0,right = arr.length-1 ; left+1 < right  ; ){
+           middle = (left+right)/2;
+           int predicted = calcNElement(arr[0],distance,middle);
+           if (arr[middle] > predicted)
+               right = middle;
+           else if (arr[middle] == predicted)
+               left = middle;
+        }
+        return calcNElement(arr[0],distance,middle);
+    }
+    private static int calcNElement(int first , int distance , int location){
+        return first+distance*location;
+    }
+    private static int calcDistance(int first ,int last , int length){
+        return Math.abs((first- last)/length);
     }
 
     public static int longestPalindrome (int[] arr){
