@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 
 public class Ex13StudentTester2023b
 {
@@ -55,18 +56,32 @@ public class Ex13StudentTester2023b
                 System.out.println("Failed,  expected: 19  student's result: "+result4);
         }
 
-//        System.out.println("----------------------------------------");
-//        System.out.println("***     Q3  - longestPalindrome      ***");
-//        System.out.println("----------------------------------------");
-//        {
-//            int[] arr= {1,3,2,3,10,10,3,2,4};
-//            System.out.println("arr: [1,3,2,3,10,10,3,2,4]");
-//            int result3=Ex13.longestPalindrome(arr);
-//            if(result3==6)
-//                System.out.println("Passed, result is 6");
-//            else
-//                System.out.println("Failed,  expected: 6  student's result: "+result3);
-//        }
+        System.out.println("----------------------------------------");
+        System.out.println("***     Q2  - missingValue           ***");
+        System.out.println("----------------------------------------");
+        {
+            int []arr = {7,13,16,19,22,25};
+            System.out.println("arr: [7,13,16,19,22,25]");
+            int result5=Ex13.missingValue(arr);
+            if (result5==10)
+                System.out.println("Passed, result is 10");
+            else
+                System.out.println("Failed,  expected: 10  student's result: "+result5);
+        }
+
+
+        System.out.println("----------------------------------------");
+        System.out.println("***     Q3  - longestPalindrome      ***");
+        System.out.println("----------------------------------------");
+        {
+            int[] arr= {1,3,2,3,10,10,3,2,4};
+            System.out.println("arr: [1,3,2,3,10,10,3,2,4]");
+            int result6=Ex13.longestPalindrome(arr);
+            if(result6==6)
+                System.out.println("Passed, result is 6");
+            else
+                System.out.println("Failed,  expected: 6  student's result: "+result6);
+        }
 //        System.out.println("----------------------------------------");
 //        System.out.println("***       Q4  - isSum                ***");
 //        System.out.println("----------------------------------------");

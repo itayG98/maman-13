@@ -1,3 +1,8 @@
+
+// Maman 13
+// Student Itay Getahun
+// Date 20/05/23
+
 public class Ex13 {
 
     public static int shortestRoad (int [] road1, int [] road2) {
@@ -51,7 +56,30 @@ public class Ex13 {
     }
 
     public static int longestPalindrome (int[] arr){
-        return 0;
+        return longestPalindrome(arr,0,arr.length-1,0);
+    }
+
+    private static int longestPalindrome(int[] arr, int right, int left, int count) {
+        // Two Stop conditions
+        //If reached a single digit in length i.e. one number;
+        if (right == left)
+            return count+1;
+        //If done go over the digits between the borders;
+        if (right>left)
+            return count;
+        if (arr[right] == arr[left]) {
+            // Evaluate palindrome by remove right and left borders and adding two to the counter
+            count = longestPalindrome(arr, right + 1, left - 1, count + 2);
+            // Evaluate palindrome by remove left border and compare to previous count
+            count = Math.max(count ,longestPalindrome(arr, right , left - 1, count));
+            // Evaluate palindrome by remove right border and compare to previous count
+            count = Math.max(count ,longestPalindrome(arr, right +1 , left, count ));
+            return count;
+        }
+        else {
+        //If there is no match of borders check for max palindrom without left brder or right border
+        return Math.max(longestPalindrome(arr, right + 1, left, 0), longestPalindrome(arr, right, left - 1, 0));
+        }
     }
 
     public static boolean isSum (int[] a, int num){
