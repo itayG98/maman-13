@@ -82,6 +82,34 @@ public class Ex13StudentTester2023b
             else
                 System.out.println("Failed,  expected: 6  student's result: "+result6);
         }
+
+        System.out.println("----------------------------------------");
+        System.out.println("***     Q3  - longestPalindrome      ***");
+        System.out.println("----------------------------------------");
+        {
+            int[] arr= {1,1,1,1,10,10,1,1,1,4};
+            System.out.println("arr: [1,1,1,1,10,10,1,1,1,4]");
+            int result7=Ex13.longestPalindrome(arr);
+            if(result7==8)
+                System.out.println("Passed, result is 8");
+            else
+                System.out.println("Failed,  expected: 8  student's result: "+result7);
+        }
+
+        System.out.println("----------------------------------------");
+        System.out.println("***     Q3  - longestPalindrome      ***");
+        System.out.println("----------------------------------------");
+        {
+            int[] arr= {1,1,1,1,10,1,1,1,4};
+            System.out.println("arr: [1,1,1,1,10,1,1,1,4]");
+            int result8=Ex13.longestPalindrome(arr);
+            if(result8==7)
+                System.out.println("Passed, result is 7");
+            else
+                System.out.println("Failed,  expected: 7  student's result: "+result8);
+        }
+
+
 //        System.out.println("----------------------------------------");
 //        System.out.println("***       Q4  - isSum                ***");
 //        System.out.println("----------------------------------------");

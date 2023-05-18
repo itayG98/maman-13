@@ -56,7 +56,7 @@ public class Ex13 {
     }
 
     public static int longestPalindrome (int[] arr){
-        //Initial start the recursive method
+        //Initial helper method to start the recursive method
         //Overloading
         return longestPalindrome(arr,0,arr.length-1,0);
     }
@@ -72,16 +72,10 @@ public class Ex13 {
         if (arr[right] == arr[left]) {
             // Evaluate palindrome by remove right and left borders and adding two to the counter
             count = longestPalindrome(arr, right + 1, left - 1, count + 2);
-            // Evaluate palindrome by remove left border and compare to previous count
-            count = Math.max(count ,longestPalindrome(arr, right , left - 1, count));
-            // Evaluate palindrome by remove right border and compare to previous count
-            count = Math.max(count ,longestPalindrome(arr, right +1 , left, count ));
             return count;
         }
-        else {
-        //If there is no match of borders check for max palindrom without left brder or right border
+        //If there is no match of borders check for max palindrome without left border or right border
         return Math.max(longestPalindrome(arr, right + 1, left, 0), longestPalindrome(arr, right, left - 1, 0));
-        }
     }
 
     public static boolean isSum (int[] a, int num){
