@@ -8,14 +8,11 @@
 public class Ex13 {
 
     /**
-     *The method calculate the shortest way withing two roads in a linear Time complexity of O(n)
+     * The method calculate the shortest way withing two roads in a linear Time complexity of O(n)
      * and space complexity of O(1).
-     *Approximately summery of operation = 4 + 2n + 1 + 4 + 7n + 1 = 10 + 9n  => linear expression
-     *explanation :
-     *The algorithm runs over the arrays twice
-     * The algorithm use constant amount of variables .
-     *This method uses constant amount of variables regardless of the arrays in addition to the array itself therefore
-     * it has linear Space complexity of O(n)
+     * Approximately summery of operation = 4 + 2n + 1 + 4 + 7n + 1 = 10 + 9n  => linear expression . <br>
+     * explanation : <br>
+     * The algorithm runs over the arrays twice and use constant amount of variable regardless of the input.
      * @param road1 integers array represent the first road
      * @param road2 integers array represent the second road
      * @return The value of the shortest possible travel path
@@ -55,14 +52,16 @@ public class Ex13 {
     /**
      * The method finds the missing value in an arithmetic series with logarithmic time complexity of O(Log(n))
      * and space complexity of O(1).
-     * Approximately summery of operation  = 3 + 6*Log(n) + 1 = 6*Log(n) +4 => Logarithmic expression
-     * explanation :
+     * Approximately summery of operation  = 3 + 6*Log(n) + 1 = 6*Log(n) +4 => Logarithmic expression . <br>
+     * explanation : <br>
      * The algorithm runs over the arrays and slice it into two parts each iteration , ignoring the irrelevant half
      * (similar to Binary Search) and searching in the matching one .
      * The algorithm use constant amount of variables .
-     * This method has use two helper methods with complexity of Time and Space of O(1)
-     * This method uses constant amount of variables regardless of the arrays in addition to the array itself
-     * therefore it is linear Space complexity of O(n)
+     * This method has use two helper methods with Time and Space complexity of O(1) :
+     * @see #calcElementByLocation(int, int, int) <strong>calcElementByLocation</strong> - find the element that should
+     * be in a specific location in the series whithin Time and Space complexity of O(1)
+     * @see #calcDistance(int, int, int) <strong>calcDistance</strong> - calculate the distance of each step in given arithmetic series in a
+     * Time and Space complexity of O(1)
      * @param arr An integers array represent an arithmetic series with missing value
      * @return The missing value
      */
