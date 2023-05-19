@@ -12,7 +12,8 @@ public class Ex13 {
      *Approximately summery of operation = 4 + 2n + 1 + 4 + 7n + 1 = 10 + 9n  => linear expression
      *explanation :
      *The algorithm runs over the arrays twice
-     *This method uses constant amount of variables regardless of the arrays therefore have Space complexity of O(1)
+     *This method uses constant amount of variables regardless of the arrays in addition to the array itself therefore
+     * it has linear Space complexity of O(n)
      * @param road1 integers array represent the first road
      * @param road2 integers array represent the second road
      * @return The value of the shortest possible travel path
@@ -50,12 +51,14 @@ public class Ex13 {
     }
 
     /**
-     *The method find the missing int in arithmetic series in logarithmic Time complexity of O(Log(n))
-     * *Approximately summery of operation = 3 + 6*Log(n) + 1 = 6*Log(n) +4 => Logarithmic expression
-     * *explanation :
+     *The method find the missing int in arithmetic series in logarithmic Time complexity of O(Log(n)) and Space
+     * complexity of O(n)
+     * Summary of operation, approximately  = 3 + 6*Log(n) + 1 = 6*Log(n) +4 => Logarithmic expression
+     * explanation :
      * The algorithm runs over the arrays and slice it into two parts each iteration , ignoring the irrelevant half
      * (similar to Binary Search) and searching in the matching one .
-     *This method uses constant amount of variables regardless of the arrays therefore have Space complexity of O(1)
+     * This method uses constant amount of variables regardless of the arrays in addition to the array itself
+     * therefore it is linear Space complexity of O(n)
      * @param arr An integers array represent an arithmetic series with missing value
      * @return The missing value
      */
@@ -97,6 +100,12 @@ public class Ex13 {
         return Math.abs((first- last)/length);
     }
 
+    /**
+     * @param arr an array of integers
+     * @return evaluate the longest palindrome
+     * The method Time complexity is O(n^2)
+     * The method Space complexity is O(n^2)
+     */
     public static int longestPalindrome (int[] arr){
         //Initial helper method to start the recursive method
         //Overloading
