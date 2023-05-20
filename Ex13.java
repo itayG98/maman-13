@@ -17,7 +17,6 @@ public class Ex13 {
      * @param road2 integers array represent the second road
      * @return The value of the shortest possible travel path
      */
-
     public static int shortestRoad (int [] road1, int [] road2) {
         // initialize the four options of travel summery
         int sumRoad1 =0 , sumRoad2 = 0 ,res;
@@ -104,10 +103,14 @@ public class Ex13 {
     }
 
     /**
+     * The method call overloading method and return its calculation of the longest palindrome length in Time complexity
+     * of O(n^2) and space complexity of O(1). <br>
+     * explanation : <br>
+     * This method calls overloading method which has Time complexity of O(n^2) and Space complexity of O(1)
      * @param arr an array of integers
      * @return evaluate the longest palindrome
-     * The method Time complexity is O(n^2)
-     * The method Space complexity is O(n^2)
+     *@see #longestPalindrome(int[] arr, int right, int left, int count) <strong>longestPalindrome</strong> - The
+     * overloading method the recursivley call itself checking a smaller substring each call in O(n^2)
      */
     public static int longestPalindrome (int[] arr){
         //Initial helper method to start the recursive method
@@ -115,6 +118,14 @@ public class Ex13 {
         return longestPalindrome(arr,0,arr.length-1,0);
     }
 
+    /**
+     * The method recursively call itself and returns the longest palindrome length in Time complexity
+     * of O(n^2) and space complexity of O(1). <br>
+     * explanation : <br>
+     * There are up to two recursive calls in each call and use constant number of variables regardless of the input
+     * @param arr an array of integers
+     * @return evaluate the longest palindrome in substring
+     */
     private static int longestPalindrome(int[] arr, int right, int left, int count) {
         // Two Stop conditions
         //If reached a single digit in length i.e. one number;
@@ -125,23 +136,22 @@ public class Ex13 {
             return count;
         if (arr[right] == arr[left]) {
             // Evaluate palindrome by remove right and left borders and adding two to the counter
-            count = longestPalindrome(arr, right + 1, left - 1, count + 2);
-            return count;
+            return longestPalindrome(arr, right + 1, left - 1, count + 2);
         }
         //If there is no match of borders check for max palindrome without left border or right border
-        return Math.max(longestPalindrome(arr, right + 1, left, 0), longestPalindrome(arr, right, left - 1, 0));
+        return Math.max(longestPalindrome(arr, right + 1, left, 0),
+                longestPalindrome(arr, right, left - 1, 0));
     }
 
     public static boolean isSum (int[] arr, int num){
-        return  isSum(arr,0,num);
+        return  isSum(arr,0,num,false);
     }
 
-    private static boolean isSum(int[] arr, int i, int num) {
-        if( i >=  arr.length || num<0)
+    private static boolean isSum(int[] arr, int i, int num ,boolean isCountedPrev ) {
+        if( i >=  arr.length || num < 0)
             return false;
-        if (num-arr[i] == 0)
+        if (!isCountedPrev && num-arr[i] == 0)
             return true;
-        return isSum(arr,num - arr[i],i+1) || isSum(arr,num,i+2) ;
-
+        return isSum(arr,i+1,num - arr[i], true) || isSum(arr,i+1,num,false) ;
     }
 }
