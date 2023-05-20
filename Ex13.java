@@ -132,7 +132,16 @@ public class Ex13 {
         return Math.max(longestPalindrome(arr, right + 1, left, 0), longestPalindrome(arr, right, left - 1, 0));
     }
 
-    public static boolean isSum (int[] a, int num){
-        return true;
+    public static boolean isSum (int[] arr, int num){
+        return  isSum(arr,0,num);
+    }
+
+    private static boolean isSum(int[] arr, int i, int num) {
+        if( i >=  arr.length || num<0)
+            return false;
+        if (num-arr[i] == 0)
+            return true;
+        return isSum(arr,num - arr[i],i+1) || isSum(arr,num,i+2) ;
+
     }
 }

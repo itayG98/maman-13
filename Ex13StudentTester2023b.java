@@ -110,20 +110,20 @@ public class Ex13StudentTester2023b
         }
 
 
-//        System.out.println("----------------------------------------");
-//        System.out.println("***       Q4  - isSum                ***");
-//        System.out.println("----------------------------------------");
-//        {
-//            int[] arr={5,4,2,1,3};
-//            int num=8;
-//            System.out.println("arr: [5,4,2,1,3]  num: 8");
-//            boolean result4=Ex13.isSum(arr, num);
-//            if (result4==true)
-//                System.out.println("Passed, result is true");
-//            else
-//                System.out.println("Failed,  expected: true   student's result: "+result4);
-//            System.out.println("----------------------------------------");
-//
-//        }
+        System.out.println("----------------------------------------");
+        System.out.println("***       Q4  - isSum                ***");
+        System.out.println("----------------------------------------");
+        {
+            int[] arr={5,4,2,1,3};
+            int num=8;
+            System.out.println("arr: [5,4,2,1,3]  num: 8");
+            boolean result9=Ex13.isSum(arr, num);
+            if (result9==true)
+                System.out.println("Passed, result is true");
+            else
+                System.out.println("Failed,  expected: true   student's result: "+result9);
+            System.out.println("----------------------------------------");
+
+        }
     }
 }
