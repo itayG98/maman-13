@@ -69,7 +69,7 @@ public class Ex13 {
         int middle = 0;
         for(int left = 0,right = arr.length-1 ; left <= right-1  ; ){
            middle = (left+right)/2;
-           if (middle == left || middle == right ){
+           if (middle == left){
                return calcElementByLocation(arr[0],distance,middle+1);
            }
             int predicted = calcElementByLocation(arr[0],distance,middle);
