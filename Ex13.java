@@ -13,6 +13,7 @@ public class Ex13 {
      * Approximately summery of operation = 4 + 2n + 1 + 4 + 7n + 1 = 10 + 9n  => linear expression . <br>
      * explanation : <br>
      * The algorithm runs over the arrays twice and use constant amount of variable regardless of the input.
+     * The idea i demonstrated in the algorithm is called "Sliding windows"
      * @param road1 integers array represent the first road
      * @param road2 integers array represent the second road
      * @return The value of the shortest possible travel path
@@ -34,7 +35,8 @@ public class Ex13 {
         int leftPart1 = sumRoad1;
         int leftPart2 = sumRoad2;
 
-        // Use the last i items to calculate the different roads when the passenger switch roads
+        // Use the last i roads sum to calculate the different roads when the passenger switch roads in each iteration
+        // The i is the switching position
         for (int i=n-1 ; i>0 ; i--){
             leftPart1 -= road1[i];
             leftPart2 -= road2[i];
@@ -65,8 +67,10 @@ public class Ex13 {
      * @return The missing value
      */
     public static int missingValue (int [] arr) {
+        // calculate the sequence distance
         int distance = calcDistance(arr[0],arr[arr.length-1],arr.length);
         int middle = 0;
+        //Binary search to find the missing position
         for(int left = 0,right = arr.length-1 ; left <= right-1  ; ){
            middle = (left+right)/2;
            if (middle == left){
@@ -78,7 +82,8 @@ public class Ex13 {
            else if (arr[middle] == predicted)
                left = middle;
         }
-        return calcElementByLocation(arr[0],distance,middle);
+        //if length of the array is not valid
+        return -1;
     }
 
     /**
@@ -90,6 +95,7 @@ public class Ex13 {
      * The method Space complexity is O(1)
      */
     private static int calcElementByLocation(int first , int distance , int location){
+        //calculating item in arithmetic series
         return first+distance*location;
     }
 
@@ -102,6 +108,7 @@ public class Ex13 {
      * The method Space complexity is O(1)
      */
     private static int calcDistance(int first ,int last , int length){
+        //calculating distance in arithmetic series
         return Math.abs((first- last)/length);
     }
 
@@ -182,12 +189,15 @@ public class Ex13 {
      * to the given number
      */
     private static boolean isSum(int[] arr, int i, int num ,int sum,int counted ) {
-        if( i >  arr.length-1 || counted > 2)
+        // stop condition
+        if( i >  arr.length-1)
             return false;
+        //if already considered two elements in a row
         if (counted == 2)
             return  isSum(arr,i+2,num,sum,0);
         if (sum + arr[i] == num)
             return true;
+        //Take or no take the current number
         return isSum(arr,i+1,num,sum + arr[i], counted+1) || isSum(arr,i+1,num,sum,0) ;
     }
 }

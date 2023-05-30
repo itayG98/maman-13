@@ -66,6 +66,10 @@ public class Ex13Tests {
         int[] arr9 = { -2,0, 4,6 };
         int value9 = Ex13.missingValue(arr9);
         Assertions.assertEquals(2, value9);
+
+        int[] arr10 = { 6 };
+        int value10 = Ex13.missingValue(arr10);
+        Assertions.assertEquals(-1, value10);
     }
 
     @Test
