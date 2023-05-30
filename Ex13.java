@@ -113,7 +113,7 @@ public class Ex13 {
      * @param arr an array of integers
      * @return evaluate the longest palindrome
      *@see #longestPalindrome(int[] arr, int right, int left, int count) <strong>longestPalindrome</strong> - The
-     * overloading method the recursivley call itself checking a smaller substring each call in O(n^2)
+     * overloading method that recursivley call itself checking a smaller substring each call in O(n^2)
      */
     public static int longestPalindrome (int[] arr){
         //Initial helper method to start the recursive method
@@ -127,6 +127,9 @@ public class Ex13 {
      * explanation : <br>
      * There are up to two recursive calls in each call and use constant number of variables regardless of the input
      * @param arr an array of integers
+     * @param right the right index
+     * @param left the left index
+     * @param count the counter of how many element in the palindrome
      * @return evaluate the longest palindrome in substring
      */
     private static int longestPalindrome(int[] arr, int right, int left, int count) {
@@ -146,12 +149,38 @@ public class Ex13 {
                 longestPalindrome(arr, right, left - 1, 0));
     }
 
+    /**
+     * The method call overloading method determines if a subset, excluding following 3 elements in the array  sum up
+     * to the given number in Time complexity of O(n^2) and space complexity of O(1). <br>
+     * explanation : <br>
+     * This method calls overloading method which has Time complexity of O(n^2) and Space complexity of O(1)
+     * @param arr an array of integers
+     * @param num the target number
+     * @return true or false determines if a subset, excluding following 3 elements in the array  sum up
+     * to the given number
+     *@see #isSum(int[] arr, int i, int num ,int sum,int counted ) <strong>isSum</strong> - The
+     * overloading method that recursivley call itself checking if an apropriate valid combination sum up to the
+     * given number using "Take no take" technique in Time complexity of O(n^2) and Space complexity of O(1)
+     */
     public static boolean isSum (int[] arr, int num){
         if (num == 0 )
             return true;
         return  isSum(arr,0,num,0,0);
     }
 
+    /**
+     * The method recursively call itself and use "Take no take" technique to check if an appropriate valid combination
+     * has the given sum in Time complexity of O(n^2) and space complexity of O(1). <br>
+     * explanation : <br>
+     * There are up to two recursive calls in each call and use constant number of variables regardless of the input
+     * @param arr an array of integers
+     * @param i the index of the mext element to take or no take in consideration
+     * @param num the target number
+     * @param sum the current summery
+     * @param counted counter of how many element have calculated in a row
+     * @return true or false determines if a subset, excluding following 3 elements in the array  sum up
+     * to the given number
+     */
     private static boolean isSum(int[] arr, int i, int num ,int sum,int counted ) {
         if( i >  arr.length-1 || counted > 2)
             return false;
