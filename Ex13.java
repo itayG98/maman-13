@@ -67,9 +67,12 @@ public class Ex13 {
     public static int missingValue (int [] arr) {
         int distance = calcDistance(arr[0],arr[arr.length-1],arr.length);
         int middle = 0;
-        for(int left = 0,right = arr.length-1 ; left+1 < right  ; ){
+        for(int left = 0,right = arr.length-1 ; left <= right-1  ; ){
            middle = (left+right)/2;
-           int predicted = calcElementByLocation(arr[0],distance,middle);
+           if (middle == left || middle == right ){
+               return calcElementByLocation(arr[0],distance,middle+1);
+           }
+            int predicted = calcElementByLocation(arr[0],distance,middle);
            if (arr[middle] > predicted)
                right = middle;
            else if (arr[middle] == predicted)
