@@ -149,16 +149,16 @@ public class Ex13 {
     public static boolean isSum (int[] arr, int num){
         if (num == 0 )
             return true;
-        return  isSum(arr,0,num,0);
+        return  isSum(arr,0,num,0,0);
     }
 
-    private static boolean isSum(int[] arr, int i, int num ,int counted ) {
-        if( i >  arr.length-1 || num < 0)
+    private static boolean isSum(int[] arr, int i, int num ,int sum,int counted ) {
+        if( i >  arr.length-1 || counted > 2)
             return false;
-        if (counted<3 && num-arr[i] == 0)
+        if (counted == 2)
+            return  isSum(arr,i+2,num,sum,0);
+        if (sum + arr[i] == num)
             return true;
-        if (counted > 2)
-            return  isSum(arr,i+1,num,0);
-        return isSum(arr,i+1,num - arr[i], counted+1) || isSum(arr,i+1,num,0) ;
+        return isSum(arr,i+1,num,sum + arr[i], counted+1) || isSum(arr,i+1,num,sum,0) ;
     }
 }

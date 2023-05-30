@@ -109,10 +109,11 @@ public class Ex13Tests {
         Assertions.assertTrue(value8);
 
         boolean value9 = Ex13.isSum(arr3, -1);
-        Assertions.assertFalse(value9);
+        Assertions.assertTrue(value9);
 
         boolean value10 = Ex13.isSum(arr3, -3);
         Assertions.assertFalse(value10);
+
 
     }
 }
