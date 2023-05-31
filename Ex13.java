@@ -119,7 +119,7 @@ public class Ex13 {
      * This method calls overloading method which has Time complexity of O(n^2) and Space complexity of O(1)
      * @param arr an array of integers
      * @return evaluate the longest palindrome
-     *@see #longestPalindrome(int[] arr, int right, int left, int count) <strong>longestPalindrome</strong> - The
+     *@see #longestPalindrome(int[] arr, int right, int left, int) <strong>longestPalindrome</strong> - The
      * overloading method that recursivley call itself checking a smaller substring each call in O(n^2)
      */
     public static int longestPalindrome (int[] arr){
@@ -170,6 +170,9 @@ public class Ex13 {
      * given number using "Take no take" technique in Time complexity of O(n^2) and Space complexity of O(1)
      */
     public static boolean isSum (int[] arr, int num){
+        //array contains only positive numbers
+        if (num <0)
+            return false;
         if (num == 0 )
             return true;
         return  isSum(arr,0,num,0,0);
